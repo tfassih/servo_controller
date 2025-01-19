@@ -1,0 +1,7 @@
+#line 1 "C:\\dev\\arduino\\servo_controller\\.vscode\\arduino.json"
+{
+    "sketch": "servo_controller.ino",
+    "output": "build",
+    "configuration": "cpu=atmega2560",
+    "board": "arduino:avr:mega"
+}
