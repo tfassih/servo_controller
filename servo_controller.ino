@@ -1,20 +1,24 @@
-#include "ServoController.h"
-#include "SerialCommand.h"
+//#include "ServoController.h"
+//#include "SerialCommand.h"
+#include <string.h>
+#include <Servo.h>
 
 const int SERVO_A_PIN = 9;
 const int SERVO_B_PIN = 10;
 
-ServoController servoA(SERVO_A_PIN);
-ServoController servoB(SERVO_B_PIN);
+Servo servoA;
+Servo servoB;
+
+int pos = 0;
 
 void setup()
 {
     Serial.begin(9600);
 
-    servoA.attach();
-    servoB.attach();
+    servoA.attach(SERVO_A_PIN);
+    servoB.attach(SERVO_B_PIN);
 
-    Serial.println("ENTER COMMAND");
+
 }
 
 void loop()
@@ -23,17 +27,15 @@ void loop()
         String input = Serial.readStringUntil('\n');
         input.trim();
 
-        SerialCommand cmd = parseSerialCommand(input);
-
-        if (cmd.isValid) {
-            if (cmd.servo == 'A') {
-                servoA.setAngle(cmd.angle);
+        if (input.substring(1).toInt() >= 0 && input.substring(1).toInt() <= 180) {
+            if (input.charAt(0) == 'A') {
+                servoA.write(input.substring(1).toInt());
                 Serial.print("Servo A set to: ");
-                Serial.println(cmd.angle);
-            } else if (cmd.servo == 'B') {
-                servoB.setAngle(cmd.angle);
+                Serial.println(input.substring(1));
+            } else if (input.charAt(0) == 'B') {
+                servoB.write(input.substring(1).toInt());
                 Serial.print("Servo B set to: ");
-                Serial.println(cmd.angle);
+                Serial.println(input.substring(1));
             }
         } else {
             Serial.println("ERROR");

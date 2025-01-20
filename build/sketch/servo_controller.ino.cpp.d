@@ -10,4 +10,8 @@ C:\dev\arduino\servo_controller\build\sketch\servo_controller.ino.cpp.o: \
  C:\Users\thoma\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Printable.h \
  C:\Users\thoma\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/USBAPI.h \
  C:\Users\thoma\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Arduino.h \
- C:\Users\thoma\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\variants\mega/pins_arduino.h
+ C:\Users\thoma\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\variants\mega/pins_arduino.h \
+ C:\dev\arduino\servo_controller\build\sketch\ServoController.h \
+ C:\Users\thoma\Documents\Arduino\libraries\Servo\src/Servo.h \
+ C:\Users\thoma\Documents\Arduino\libraries\Servo\src/avr/ServoTimers.h \
+ C:\dev\arduino\servo_controller\build\sketch\SerialCommand.h
